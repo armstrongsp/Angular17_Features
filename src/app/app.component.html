@@ -1,0 +1,25 @@
+<div class="text-xl font-bold mb-6 bg-lime-800 p-4 text-white rounded-md">Angular 17 Lunch and Learn</div>
+
+<div class="flex mb-4">
+    <div class="flex-initial cursor-pointer p-2 mr-4 bg-slate-400 rounded-md" (click)="setExample('defer');">Using &#64;defer</div>
+    <div class="flex-initial cursor-pointer p-2 mr-4 bg-slate-400 rounded-md" (click)="setExample('for');">Using &#64;for</div>
+    <div class="flex-initial cursor-pointer p-2 mr-4 bg-slate-400 rounded-md" (click)="setExample('if');">Using &#64;if</div>
+    <div class="flex-initial cursor-pointer p-2 mr-4 bg-slate-400 rounded-md" (click)="setExample('switch');">Using &#64;switch</div>
+    <div class="flex-initial cursor-pointer p-2 mr-4 bg-slate-400 rounded-md" (click)="setExample('signal');">Using signals</div>
+</div>
+
+@switch (exampleName) {
+    @case ("signal") { <app-signal-example></app-signal-example>}
+    @case ("defer") { <app-defer-example></app-defer-example>}
+    @case ("for") { <app-for-example></app-for-example>}
+    @case ("if") { <app-if-example></app-if-example>}
+    @case ("switch") { <app-switch-example></app-switch-example>}
+    @default () { 
+        <div class="w-1/3">
+            Welcome. This lunch and learn will go over some of the new features added in Angular 17.
+            This is not mean to be an exhustive list, but will go over several of the new directives
+            that add native features for things like looping and logic control. 
+        </div> 
+    }
+}
+

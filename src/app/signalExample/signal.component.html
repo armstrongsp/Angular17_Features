@@ -1,0 +1,44 @@
+<div class="text-lg font-semibold mb-2">Signal inputs replace &#64;Input</div>
+<div class="pl-6">
+  <div>
+    The new signal input feature replaces the old &#64;Input logic and greatly reduces the logic needed to detect changes to passed in values.
+    Previously you would need to wire in logic to detect when a the input value changed; now the input parameters are signals, so you can 
+    use computed values or effects that automatically detect changes.
+  </div>
+  <div class="mb-6 text-blue-800 underline">https://blog.angular-university.io/angular-signal-inputs/</div>
+
+
+  <div class="flex">
+    <div class="flex-1 mr-3">
+      <div class="pl-6 font-bold mb-6 bg-slate-200 rounded-md">signal with computed value:</div>
+      <div class="pl-6 mb-10">
+        <app-signal-child-example [exampleValue]="numberToShow"></app-signal-child-example>
+        <div class="flex-initial bg-blue-950 text-white rounded-md p-2 cursor-pointer mt-4 w-44" (click)="increment()">Increment The Value</div>
+      </div>
+    </div>
+    <div class="flex-1">
+      <div class="pl-6 font-bold mb-6 bg-slate-200 rounded-md">Example code</div>
+      <textarea class="w-full h-60">
+        Child component:
+        export class SignalChildExampleComponent {
+            exampleValue = input<number>(0);
+            computedValue: number = 0;
+          
+            constructor() {
+              effect(() => {
+                  this.computedValue = this.exampleValue() * 10;
+              });
+            }
+          }
+
+        Consuming the component:
+        <child-example [exampleValue]="numberToShow"></child-example>
+
+      </textarea>
+    </div>
+  </div>
+  
+</div>
+
+
+
