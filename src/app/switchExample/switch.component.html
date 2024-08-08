@@ -1,0 +1,48 @@
+<div class="text-lg font-semibold mb-2">&#64;switch replaced ngSwitch for conditionally displaying content</div>
+<div class="pl-6">
+  <div>
+    The <span class="text-bold">switch</span> directive is a replacement for the ngSwitch / ngSwitchCase extension. It basically does the same things
+    but it's much more performant and doesn't cause as many repaints when processing array data.
+  </div>
+  <div class="mb-6 text-blue-800 underline">https://blog.angular-university.io/angular-switch/</div>
+
+
+  <div class="flex">
+    <div class="flex-1 mr-3">
+      <div class="pl-6 font-bold mb-6 bg-slate-200 rounded-md">switch in action:</div>
+      <div class="pl-6 mb-10">
+        @for(chick of chickens; track chick.breedID) {
+          <div class="flex">
+            <div class="flex-1 pr-2">{{ chick.breedName }}</div>
+            <div class="flex-1 font-semibold">
+              @switch (chick.weight) {
+                @case(3) { small }
+                @case(4) { average }
+                @case(5) { large }
+                @case(6) { giant }
+                @default() { <i>unknown</i> }
+              }
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+    <div class="flex-1">
+      <div class="pl-6 font-bold mb-6 bg-slate-200 rounded-md">Example code</div>
+      <textarea class="w-full h-60">
+        @switch (chick.weight) {
+          @case(3) { <span>small</span> }
+          @case(4) { <span>average</span> }
+          @case(5) { <span>large</span> }
+          @case(6) { <span>giant</span> }
+          @default() { <span><i>unknown</i></span> }
+        }
+      </textarea>
+    </div>
+  </div>
+</div>
+
+
+
+
+

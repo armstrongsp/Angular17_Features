@@ -1,0 +1,54 @@
+<div class="text-lg font-semibold mb-2">&#64;if replaced ngIf for conditional display</div>
+<div class="pl-6">
+  <div>
+    The <span class="text-bold">if</span> directive is a replacement for the ngIf extension. It works the same as ngIf
+    but it more performant.
+  </div>
+  <div class="mb-6 text-blue-800 underline">https://blog.angular-university.io/angular-if/</div>
+
+
+  <div class="flex">
+    <div class="flex-1 mr-3">
+      <div class="pl-6 font-bold mb-6 bg-slate-200 rounded-md">an <span class="text-bold">if / else</span> statement</div>
+      <div class="pl-6 mb-10">
+        @if (someControlValue == "A") {
+            <div>The thing is equal to A</div>
+        }
+        @else if (someControlValue == "B") {
+          <div>The thing is equal to B</div>
+        }
+        @else {
+            <div>The thing is not A or B</div>
+        }
+        <div class="flex">
+            <div class="flex-initial bg-blue-950 text-white rounded-md p-2 cursor-pointer" (click)="toggleValue()">Toggle Value</div>
+        </div>
+      </div>
+    </div>
+    <div class="flex-1">
+      <div class="pl-6 font-bold mb-6 bg-slate-200 rounded-md">Example code</div>
+      <textarea class="w-full h-80">
+        @if (someControlValue == "A") {
+          <div>The thing is equal to A</div>
+        }
+        @else if (someControlValue == "B") {
+          <div>The thing is equal to B</div>
+        }
+        @else {
+            <div>The thing is not A or B</div>
+        }
+        <div class="flex">
+            <div class="..." (click)="toggleValue()">Toggle Value</div>
+        </div>
+      </textarea>
+    </div>
+  </div>
+
+
+  
+</div>
+
+
+
+
+

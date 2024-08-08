@@ -1,0 +1,69 @@
+<div class="text-lg font-semibold mb-2">&#64;defer allows you to dynamically load parts of a page based on an event</div>
+<div class="pl-6">
+  <div>
+    The components referenced inside of the <span class="text-bold">defer</span> clause will be lazy loaded when the triggering event occurs.
+    There are some built in events that can be used, or you can define your own custom events.
+  </div>
+  <div class="mb-6 text-blue-800 underline">https://blog.angular-university.io/angular-defer/</div>
+
+
+  <div class="flex">
+    <div class="flex-1 mr-3">
+      <div class="pl-6 font-bold mb-6 bg-slate-200 rounded-md">defer using the built in 'on hover' event:</div>
+      <div class="pl-6 mb-10">
+        @defer (on hover(loadFor)) {
+          <app-defer-big-component></app-defer-big-component>
+        }
+        @placeholder {
+          <div #loadFor>hover here to load</div>
+        }
+        @loading (minimum 4s) {
+          <div>....the component is loading</div>
+        }
+      </div>
+    </div>
+    <div class="flex-1">
+      <div class="pl-6 font-bold mb-6 bg-slate-200 rounded-md">Example code</div>
+      <textarea class="w-full h-60">
+        @defer (on hover(loadFor)) {
+          <app-defer-big-component></app-defer-big-component>
+        }
+        @placeholder {
+          <div #loadFor>hover here to load</div>
+        }
+        @loading (minimum 4s) {
+          <div>....the component is loading</div>
+        }
+      </textarea>
+    </div>
+  </div>
+  
+
+  <div class="flex">
+    <div class="flex-1 mr-3">
+      <div class="pl-6 font-bold mb-6 bg-slate-200 rounded-md">defer using a custom trigger:</div>
+      <div class="pl-6 mb-10">
+        @defer (when showDeferNow) {
+        <app-defer-big-component></app-defer-big-component>
+        }
+        @placeholder {
+          <div class="text-blue-800 cursor-pointer underline" (click)="setShowDefer()">click here to show it</div>
+        }
+      </div>
+    </div>
+    <div class="flex-1">
+      <div class="pl-6 font-bold mb-6 bg-slate-200 rounded-md">Example code</div>
+      <textarea class="w-full h-60">
+        @defer (when showDeferNow) {
+          <app-defer-big-component></app-defer-big-component>
+          }
+          @placeholder {
+            <div class="..." (click)="setShowDefer()">click here to show it</div>
+          }
+      </textarea>
+    </div>
+  </div>
+</div>
+
+
+

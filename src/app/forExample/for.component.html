@@ -1,0 +1,59 @@
+<div class="text-lg font-semibold mb-2">&#64;for replaced ngFor for looping over data</div>
+<div class="pl-6">
+  <div>
+    The <span class="text-bold">for</span> directive is a replacement for the ngFor extension. It basically does the same things
+    but it's much more performant and doesn't cause as many repaints when processing array data. One key note is that the new 
+    syntax does require a tracking attribute in the data being itterated over. This helps the core UI processor keep track of elements
+    inside of the loop.
+  </div>
+  <div class="mb-6 text-blue-800 underline">https://blog.angular-university.io/angular-for/</div>
+
+
+  <div class="flex">
+    <div class="flex-1 mr-3">
+      <div class="pl-6 font-bold mb-6 bg-slate-200 rounded-md">a normal <span class="text-bold">for</span> loop</div>
+      <div class="pl-6 mb-10">
+        @for(chick of chickens; track chick.breedID) {
+          <div>{{ chick.breedName }}</div>
+        }
+      </div>
+    </div>
+    <div class="flex-1">
+      <div class="pl-6 font-bold mb-6 bg-slate-200 rounded-md">Example code</div>
+      <textarea class="w-full h-60">
+        @for(chick of chickens; track chick.breedID) {
+          <div>{ { chick.breedName } }</div>
+        }
+      </textarea>
+    </div>
+  </div>
+
+  <div class="flex">
+    <div class="flex-1 mr-3">
+      <div class="pl-6 font-bold mb-6 bg-slate-200 rounded-md">a <span class="text-bold">for</span> loop with no data</div>
+      <div class="pl-6 mb-10">
+        @for(chick of coonsInYard; track chick.breedID) {
+          <div>{{ chick.breedName }}</div>
+        }
+        @empty {
+          <div>A racoon ate all of your chickens</div>
+        }
+      </div>
+    </div>
+    <div class="flex-1">
+      <div class="pl-6 font-bold mb-6 bg-slate-200 rounded-md">Example code</div>
+      <textarea class="w-full h-60">
+        @for(chick of coonsInYard; track chick.breedID) {
+          <div>{ { chick.breedName } }</div>
+        }
+        @empty {
+          <div>A racoon ate all of your chickens</div>
+        }
+      </textarea>
+    </div>
+  </div>
+</div>
+
+
+
+
